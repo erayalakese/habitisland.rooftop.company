@@ -1438,6 +1438,12 @@
       background: var(--sand);
     }
 
+    .finale .content-layer {
+      position: relative;
+      inset: auto;
+      min-height: 100vh;
+    }
+
     .finale-bg {
       position: absolute;
       inset: 0;
@@ -1747,6 +1753,7 @@
       .monument { left: 33%; width: 20rem; }
       .form-row { grid-template-columns: 1fr; border-radius: 1.5rem; }
       .form-row button { width: 100%; }
+      .finale-shell { padding-bottom: 11rem; }
       .footer-line { flex-direction: column; align-items: center; padding-bottom: 3.5rem; }
     }
 
@@ -1822,12 +1829,12 @@
       </div>
       <div class="layer depth-4 content-layer" data-depth="4">
         <div class="hero-copy">
-          <p class="eyebrow" data-animate="fade-up">A calm, shame-free habit tracker · 30–60 seconds a day</p>
-          <h1 class="hero-title" aria-label="Faro" data-animate="converge">
+          <p class="eyebrow">A calm, shame-free habit tracker · 30–60 seconds a day</p>
+          <h1 class="hero-title" aria-label="Faro">
             <span class="word word-left" aria-hidden="true">Fa</span><span class="word word-right" aria-hidden="true">ro</span>
           </h1>
-          <p class="hero-intro" data-animate="fade-up">Good habits build your island. Habits you're leaving behind clear the fog. Check in once a day; miss a day and nothing falls apart.</p>
-          <div class="hero-cta-row" data-animate="scale-in">
+          <p class="hero-intro">Good habits build your island. Habits you're leaving behind clear the fog. Check in once a day; miss a day and nothing falls apart.</p>
+          <div class="hero-cta-row">
             <a class="primary-cta" href="#waitlist">Join the waitlist — one email at launch</a>
             <span class="availability">Coming first to Google Play for Android</span>
           </div>
@@ -1849,14 +1856,14 @@
         <div class="loop-shell">
           <div class="loop-head">
             <div>
-              <p class="eyebrow" data-animate="slide-left">A day in Faro</p>
-              <h2 class="display" data-animate="fade-up">Choose. Check in. Watch the island answer.</h2>
+              <p class="eyebrow">A day in Faro</p>
+              <h2 class="display">Choose. Check in. Watch the island answer.</h2>
             </div>
-            <p class="body-copy" data-animate="fade-up">Pick something you want to grow—or something you're ready to leave behind. Faro asks one small question each day, then turns your answer into a change you can see.<span class="preview-note">Product preview · illustrated with Faro's in-game art</span></p>
+            <p class="body-copy">Pick something you want to grow—or something you're ready to leave behind. Faro asks one small question each day, then turns your answer into a change you can see.<span class="preview-note">Product preview · illustrated with Faro's in-game art</span></p>
           </div>
 
           <ol class="loop-steps" aria-label="Faro's three-step daily flow">
-            <li class="loop-card" data-animate="fade-up">
+            <li class="loop-card">
               <span class="loop-step-label">Choose a habit</span>
               <div class="loop-screen">
                 <div class="loop-status"><span>Today</span><span>30–60 sec</span></div>
@@ -1864,14 +1871,14 @@
                   <strong>What belongs on your island?</strong>
                   <p>Build something new, or make room by letting something go.</p>
                   <div class="habit-choice" aria-hidden="true">
-                    <span>Read ten pages <small>Build</small></span>
-                    <span>Late-night scrolling <small>Resist</small></span>
+                    <span>Build a reading habit <small>Build</small></span>
+                    <span>Quit smoking <small>Leave behind</small></span>
                   </div>
                 </div>
               </div>
             </li>
 
-            <li class="loop-card" data-animate="fade-up">
+            <li class="loop-card">
               <span class="loop-step-label">Check in</span>
               <div class="loop-screen checkin-screen">
                 <div class="loop-screen-copy">
@@ -1883,7 +1890,7 @@
               </div>
             </li>
 
-            <li class="loop-card" data-animate="fade-up">
+            <li class="loop-card">
               <span class="loop-step-label">See the change</span>
               <div class="loop-screen island-screen" role="img" aria-label="Faro's island after a check-in, with a growing house and a lit lighthouse">
                 <div class="loop-status"><span>Your island</span><span>Evening</span></div>
@@ -2031,11 +2038,11 @@
           <h2 class="display" data-animate="converge">Some progress belongs in the sky.</h2>
           <p class="body-copy" data-animate="fade-up">Faro keeps two kinds of progress separate, so a hard day never erases the life you've already built.</p>
           <div class="progress-rules">
-            <div class="progress-rule" data-animate="slide-left">
+            <div class="progress-rule">
               <strong>For habits you build</strong>
               <span>Buildings grow from your total check-ins, not consecutive days. Miss one and growth simply pauses. Nothing resets.</span>
             </div>
-            <div class="progress-rule" data-animate="slide-right">
+            <div class="progress-rule">
               <strong>For habits you leave behind</strong>
               <span>Weekly seals notice rhythm and recovery. The 30-, 90-, 180-, and 365-day stars mark clean stretches; once earned, they stay lit.</span>
             </div>
@@ -2132,8 +2139,8 @@
       <div class="layer depth-4 content-layer" data-depth="4">
         <div class="finale-shell">
           <div>
-            <p class="eyebrow" data-animate="fade-up">Coming first to Google Play for Android</p>
-            <h2 class="finale-title" data-animate="converge">Your island is out there.</h2>
+            <p class="eyebrow">Coming first to Google Play for Android</p>
+            <h2 class="finale-title">Your island is out there.</h2>
             <p class="finale-copy" data-animate="fade-up">Leave your email. We'll send one note when Faro is ready—then leave the rest of your inbox alone.</p>
 
             <form class="waitlist-form" id="waitlist-form" name="faro-waitlist" method="POST" action="/" data-netlify="true" netlify-honeypot="website" data-animate="scale-in">
@@ -2161,7 +2168,7 @@
       </div>
       <div class="layer depth-5" data-depth="5" aria-hidden="true"></div>
       <footer class="footer-line">
-        <span>© 2026 Faro · Rooftop</span><a href="#waitlist-privacy">Waitlist privacy</a><span>Build good habits. Quit bad ones. · not anymore</span>
+        <span>© 2026 Faro · Rooftop</span><span>Build good habits. Quit bad ones. · not anymore</span>
       </footer>
     </section>
   </main>
@@ -2195,18 +2202,18 @@
       function initWordLighting() {
         document.querySelectorAll("[data-word-light]").forEach((el) => {
           const words = splitWords(el);
-          if (!hasGsap || prefersReduced || isTouch || isLowPower) {
+          if (!hasGsap || prefersReduced) {
             words.forEach((word) => word.classList.add("lit"));
             return;
           }
 
           const scene = el.closest(".scene");
-          const pixelsPerWord = 48;
+          const pixelsPerWord = isTouch ? 92 : 104;
 
           ScrollTrigger.create({
             trigger: scene,
             start: "top top",
-            end: () => `+=${Math.max(window.innerHeight * 2.1, words.length * pixelsPerWord)}`,
+            end: () => `+=${Math.max(window.innerHeight * 4, words.length * pixelsPerWord)}`,
             pin: true,
             pinSpacing: true,
             scrub: true,
@@ -2457,10 +2464,7 @@
         initMobileWaitlist();
 
         try {
-          await Promise.race([
-            loadMotionEngine(),
-            new Promise((_, reject) => setTimeout(() => reject(new Error("Motion engine timeout")), 2200))
-          ]);
+          await loadMotionEngine();
         } catch {
           hasGsap = false;
         }
@@ -2476,7 +2480,13 @@
           initLighthouseJourney();
           initVoyages();
           initFinaleIris();
+          ScrollTrigger.sort();
           ScrollTrigger.refresh();
+
+          const refreshLayout = () => requestAnimationFrame(() => ScrollTrigger.refresh());
+          if (document.fonts?.ready) document.fonts.ready.then(refreshLayout);
+          if (document.readyState === "complete") refreshLayout();
+          else window.addEventListener("load", refreshLayout, { once: true });
         }
       }
 
