@@ -9,6 +9,7 @@
   <meta property="og:description" content="Build what you want to keep. Leave behind what you no longer need. Join the Faro waitlist.">
   <meta property="og:image" content="assets/feature-faro.png">
   <title>Faro — Coming soon</title>
+  <script src="https://getlaunchlist.com/js/widget-diy.js" defer></script>
 
   <!--
     EPIC DESIGN TECHNIQUES APPLIED
@@ -17,9 +18,7 @@
     clip-path births · ghost typography · floating loops · inter-section travel
 
     WAITLIST DELIVERY
-    The form uses Netlify Forms. Deploy this folder on Netlify to collect entries.
-    On unsupported/local hosts, the page reports preview mode instead of claiming
-    an email was captured.
+    The custom form posts directly to Faro's LaunchList waitlist.
   -->
 
   <link rel="preload" as="image" href="assets/lighthouse-bright.png">
@@ -2143,9 +2142,7 @@
             <h2 class="finale-title">Your island is out there.</h2>
             <p class="finale-copy" data-animate="fade-up">Leave your email. We'll send one note when Faro is ready—then leave the rest of your inbox alone.</p>
 
-            <form class="waitlist-form" id="waitlist-form" name="faro-waitlist" method="POST" action="/" data-netlify="true" netlify-honeypot="website" data-animate="scale-in">
-              <input type="hidden" name="form-name" value="faro-waitlist">
-              <p class="sr-only"><label>Do not fill this out if you are human: <input name="website"></label></p>
+            <form class="waitlist-form launchlist-form" id="waitlist-form" name="faro-waitlist" method="POST" action="https://getlaunchlist.com/s/kruFGf" data-animate="scale-in">
               <label class="sr-only" for="waitlist-email">Email address</label>
               <div class="form-row">
                 <input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@yourshore.com" required>
@@ -2161,7 +2158,7 @@
             </div>
             <details class="waitlist-privacy" id="waitlist-privacy">
               <summary>Waitlist privacy</summary>
-              <p>Your email is used only to send Faro's launch announcement. It is submitted through this site's hosting form service, is not sold, and is not used for an automated marketing sequence. Every message includes a way to unsubscribe.</p>
+              <p>Your email is used only to send Faro's launch announcement. It is submitted to LaunchList, our waitlist provider, is not sold, and is not used for an automated marketing sequence. Every message includes a way to unsubscribe.</p>
             </details>
           </div>
         </div>
@@ -2401,44 +2398,6 @@
         observer.observe(finale);
       }
 
-      function encodeForm(data) {
-        return new URLSearchParams(data).toString();
-      }
-
-      function initWaitlist() {
-        const form = document.querySelector("#waitlist-form");
-        const status = document.querySelector("#form-status");
-        const submit = form.querySelector("button[type='submit']");
-
-        form.addEventListener("submit", async (event) => {
-          event.preventDefault();
-          if (!form.reportValidity()) return;
-          submit.disabled = true;
-          status.textContent = "Sending your note across the water…";
-
-          if (location.protocol === "file:" || ["localhost", "127.0.0.1"].includes(location.hostname)) {
-            status.textContent = "Preview mode: publish this folder on Netlify to capture waitlist emails.";
-            submit.disabled = false;
-            return;
-          }
-
-          try {
-            const response = await fetch("/", {
-              method: "POST",
-              headers: { "Content-Type": "application/x-www-form-urlencoded" },
-              body: encodeForm(Object.fromEntries(new FormData(form)))
-            });
-            if (!response.ok) throw new Error("Waitlist submission failed");
-            form.reset();
-            status.textContent = "You're on the shore. We'll write when the light is ready.";
-            submit.textContent = "Place saved";
-          } catch {
-            status.textContent = "The tide didn't carry that through. Please try again in a moment.";
-            submit.disabled = false;
-          }
-        });
-      }
-
       function loadScript(src) {
         return new Promise((resolve, reject) => {
           const script = document.createElement("script");
@@ -2460,7 +2419,6 @@
       async function boot() {
         initMotionToggle();
         initSoundToggle();
-        initWaitlist();
         initMobileWaitlist();
 
         try {
