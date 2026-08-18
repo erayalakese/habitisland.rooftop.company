@@ -1,0 +1,211 @@
+# Faro — Privacy Policy
+
+**Effective date:** 17 August 2026
+
+**Last updated:** 17 August 2026
+
+> Publication blocker: replace `PRIVACY_CONTACT_EMAIL` with a working address
+> controlled by Rooftop before this policy is published.
+
+Faro ("the app") is developed and published by Rooftop ("we", "us"). This
+policy covers the Faro Android app and the Faro website. It explains what data
+stays on your device, what leaves it, why it is used, how long it is kept, and
+the choices you have.
+
+## The short version
+
+- Your habit content stays on your device. Habit names, check-ins, consumption
+  counts, budgets and progress are not sent to us or our service providers.
+- Optional product analytics is off until you choose **Share usage data**.
+- Technical crash and performance reports are sent to Sentry so we can keep the
+  app reliable. These reports can include an IP address and technical request
+  context, but are designed not to include habit content.
+- Faro uses anonymous service identifiers to check Faro+ subscription status.
+- The website sends analytics only after you accept analytics. If you join the
+  waitlist, your email is sent to LaunchList only for the launch announcement.
+- No ads, no sale of data and no Faro account are required.
+
+## Data that stays on your device
+
+Faro is offline-first. Everything you enter into it — habit names and types,
+daily check-ins, resistance budgets, reduction curves, achievements, island
+decorations and notification preferences — is stored in a local database on
+your device.
+
+- We have no application server that receives this habit content and no way to
+  read it remotely.
+- Removing the app removes its live local database. Your device's own backup
+  system may retain or restore a personal backup according to settings you
+  control and your device provider's terms.
+- During one optional onboarding moment Faro can use the microphone to measure
+  a live sound level. It does not record audio, keep an audio buffer or send
+  microphone data anywhere.
+- Home-screen widget data and notification preferences remain on the device.
+
+Habits can concern sensitive topics such as smoking or alcohol. Habit content
+is therefore excluded from analytics events, crash-report fields, purchase
+records and the community counter described below.
+
+## Data that leaves the app
+
+The app uses the following service providers over encrypted connections.
+
+### 1. Aggregate community counter — Cloudflare
+
+During onboarding, Faro reads a public total showing contributions added to a
+shore counter in the previous seven days. If you complete a resistance setup,
+the app sends a bodyless request that increases the current day's total.
+
+- The request contains no habit content, user ID, device ID or installation ID.
+- Faro's Worker does not read, hash or store the request's IP address.
+- All requests share one short-lived global burst-limit bucket; it is not keyed
+  to a person, device or IP address.
+- Cloudflare necessarily processes ordinary network metadata, including a
+  source IP address, to route and protect the HTTPS request. Worker observability
+  and invocation-log storage are disabled.
+- The only product record is one integer total per UTC calendar day. Those
+  anonymous aggregate totals may be retained as historical records; they cannot
+  be tied back to a person or device.
+
+Purpose: show an honest aggregate community moment while limiting simple
+automated request bursts.
+
+### 2. Usage analytics — Google Firebase Analytics (only with your consent)
+
+If you choose **Share usage data** near the end of onboarding, we collect a
+small set of product events such as onboarding completion, habit creation, a
+generic check-in, review-request attempts and paywall outcomes. We also receive
+general device information (for example device model, OS and app version),
+coarse region derived from IP and a random app-instance identifier.
+
+- Events do not include habit names, habit types, consumption counts, budgets,
+  reduction curves or other habit content.
+- Advertising ID collection and ad-personalization signals are disabled.
+- You can turn analytics off at any time under **Usage analytics** in Settings.
+  Future analytics collection stops and the Firebase identifier is removed from
+  RevenueCat.
+- User-level and event-level analytics data is retained for no more than two
+  months. Google Analytics standard aggregate reports may not be affected by
+  this event-retention setting.
+
+Purpose: understand whether core product flows work and improve the app. If you
+decline, Faro does not send Firebase Analytics events.
+
+### 3. Crash and performance reports — Sentry
+
+Faro sends technical error, performance, transaction and log information to
+Sentry so we can diagnose failures. Depending on the event, this can include a
+stack trace, app and device state, device model, OS and app version, route or
+screen breadcrumbs, request headers and the network IP address.
+
+- Faro has no account username, email address or habit profile to attach to a
+  Sentry event.
+- Habit names, counts, budgets and other habit content are not intentionally
+  written to Sentry fields, breadcrumbs, route names or logs.
+- Detailed event data is retained for no more than 90 days. We may delete it
+  earlier when it is no longer useful.
+
+Purpose: app security, crash diagnosis and performance reliability.
+
+### 4. Purchases — RevenueCat and Google Play Billing
+
+Faro configures RevenueCat with an anonymous app-user identifier so the app can
+check whether Faro+ is active and restore access after reinstall. RevenueCat
+can receive this identifier, app/device metadata and entitlement state even if
+you have not completed a purchase. If you subscribe, Google Play processes the
+payment and RevenueCat receives purchase and subscription status such as the
+product, purchase time, renewal, cancellation and entitlement state.
+
+If Usage analytics is enabled, Faro also gives RevenueCat the random Firebase
+app-instance identifier. This lets RevenueCat attribute subscription lifecycle
+and revenue events to the same analytics instance. Turning Usage analytics off
+removes that identifier and stops future Firebase collection on the device.
+
+- We do not receive your payment-card or bank details; Google Play processes
+  them.
+- Purchase and entitlement records are kept as long as needed to provide and
+  restore Faro+, meet financial/legal obligations, resolve disputes and prevent
+  fraud. Google Play and RevenueCat apply their own retention duties to records
+  they control.
+
+Purpose: present the subscription, verify access and restore purchases.
+
+## Website and waitlist
+
+### Optional website analytics — Google Analytics
+
+The Faro website loads Google Analytics only after you select **Accept
+analytics**. It can then collect page views, interactions, browser/device
+information, coarse region derived from IP, cookies and a random browser/client
+identifier. It does not receive app habit content.
+
+The site stores your analytics choice in local storage. If you choose **Only
+necessary**, the Google Analytics script is not loaded. User-level and
+event-level website analytics is retained for no more than two months; standard
+aggregate reports may persist longer.
+
+### Waitlist — LaunchList
+
+If you submit an email address on the website, it is sent to LaunchList, our
+waitlist provider. We use it only for Faro's launch announcement, not for an
+automated marketing sequence, and do not sell it. Every message provides a way
+to unsubscribe.
+
+We delete the waitlist within 30 days after the launch announcement is sent, or
+earlier if you unsubscribe or ask us to delete your address. A later newsletter
+or marketing sequence would require a new, separate choice.
+
+## What we do not do
+
+- No advertising or advertising SDKs.
+- No sale or rental of personal data.
+- No marketing profile built from app behaviour.
+- No Faro account, password, contacts, precise location, photos or files.
+- No audio recording or transmission.
+- No habit or health content sent to analytics, crash reporting or purchase
+  providers.
+
+## Your choices and rights
+
+- **App analytics:** accept or decline during onboarding; change the choice at
+  any time in Settings.
+- **Website analytics:** choose **Accept analytics** or **Only necessary** on
+  the site. You can clear the site's local storage/cookies to reset the choice.
+- **Waitlist:** unsubscribe from the launch email or ask us to delete your
+  address.
+- **Local habit data:** remove individual records in Faro or remove the app.
+  Device backups are controlled through your device settings.
+- **Provider data:** contact us to request access, correction or deletion tied
+  to an identifier you can provide. Some purchase records may have to be kept
+  for legal, accounting, security or dispute purposes.
+
+Depending on where you live, you may have additional rights under laws such as
+the EU/UK GDPR or Türkiye's KVKK, including access, correction, erasure,
+restriction, objection and complaint to a supervisory authority.
+
+## Processors and international transfers
+
+Our providers include Cloudflare, Inc.; Google LLC (Firebase, Google Analytics
+and Google Play); Functional Software, Inc. (Sentry); RevenueCat, Inc.; and
+LaunchList. They may process data outside your country, including in the United
+States, under their contractual safeguards and applicable transfer mechanisms.
+
+## Children
+
+Faro is intended for adults aged 18 and over and is not directed to children.
+We do not knowingly collect personal data from children. If you believe a child
+has provided data, contact us so we can investigate and delete it where
+applicable.
+
+## Changes to this policy
+
+We update this policy before materially changing what Faro collects or why it
+is used. The latest version and its update date will remain on this page.
+Material app changes will also be described in release notes or an in-app
+notice when appropriate.
+
+## Contact
+
+Rooftop — publisher of Faro
+
+Email: `PRIVACY_CONTACT_EMAIL`
