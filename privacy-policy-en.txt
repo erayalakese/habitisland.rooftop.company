@@ -4,9 +4,6 @@
 
 **Last updated:** 17 August 2026
 
-> Publication blocker: replace `PRIVACY_CONTACT_EMAIL` with a working address
-> controlled by Rooftop before this policy is published.
-
 Faro ("the app") is developed and published by Rooftop ("we", "us"). This
 policy covers the Faro Android app and the Faro website. It explains what data
 stays on your device, what leaves it, why it is used, how long it is kept, and
@@ -208,4 +205,4 @@ notice when appropriate.
 
 Rooftop — publisher of Faro
 
-Email: `PRIVACY_CONTACT_EMAIL`
+Email: `faro@rooftop.company`
